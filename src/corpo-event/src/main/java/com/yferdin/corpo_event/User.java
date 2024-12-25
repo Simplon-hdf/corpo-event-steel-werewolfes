@@ -1,9 +1,14 @@
-package model;
+package com.yferdin.corpo_event;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.UUID;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "users")
 public class User {
     @Id
@@ -25,6 +30,22 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public Role getRole() {
+		// TODO Auto-generated method stub
+		return role;
+	}
+
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return email;
+	}
+
+	
 
 }
 
