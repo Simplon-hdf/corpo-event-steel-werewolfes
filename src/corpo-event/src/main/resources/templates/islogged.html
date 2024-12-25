@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Session Example</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    
+    <!-- Vérification de la variable dans la session -->
+    <p th:if="${session.userMail != null}">
+        Bonjour, <span th:text="${session.username}"></span> !
+    </p>
+    
+    <p th:if="${session.userMail == null}">
+        Vous n'êtes pas connecté.
+    </p>
+</body>
+</html>
