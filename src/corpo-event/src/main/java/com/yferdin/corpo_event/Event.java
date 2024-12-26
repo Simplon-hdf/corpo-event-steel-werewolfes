@@ -12,7 +12,71 @@ import java.util.UUID;
 @Setter
 @Table(name = "event")
 public class Event {
-    @Id
+    public UUID getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(UUID eventId) {
+		this.eventId = eventId;
+	}
+
+	public String getEventName() {
+		return eventName;
+	}
+
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
+	}
+
+	public String getEventDescription() {
+		return eventDescription;
+	}
+
+	public void setEventDescription(String eventDescription) {
+		this.eventDescription = eventDescription;
+	}
+
+	public LocalDateTime getStartsAt() {
+		return startsAt;
+	}
+
+	public void setStartsAt(LocalDateTime startsAt) {
+		this.startsAt = startsAt;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public LocalDateTime getFinishAt() {
+		return finishAt;
+	}
+
+	public void setFinishAt(LocalDateTime finishAt) {
+		this.finishAt = finishAt;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Id
     @GeneratedValue
     private UUID eventId;
 
