@@ -31,7 +31,14 @@ public String displayEventForm(Model model) {
 @PostMapping("/event/new")
 public String persistEvent(@ModelAttribute Event event, HttpServletRequest request) {
 	String mail = request.getSession().getAttribute("userMail").toString();
-	
-	return "of-the-jedi";
+	User user = userRepository.findByEmail(mail);
+	event.setUser(user);
+	Location location = event.getLocation();
+	Location checkDb = locationRepository.findByLocationName(location.getLocationName());
+	if(checkDb == null) {
+		locationRepository.save(location);
+	}
+	eventRepository.save(event);
+	return "newEvent";
 }
 }
