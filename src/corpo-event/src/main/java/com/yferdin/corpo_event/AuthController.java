@@ -21,7 +21,7 @@ public class AuthController {
         if (success) {
         	User user = authService.getUser(email);
         	session.setAttribute("userMail", email);
-        	session.setAttribute("userRole", user.getRole());
+        	session.setAttribute("userRole", user.getRole().getName());
             return "redirect:/home/";
         } else {
         	redirAttr.addFlashAttribute("error", "Une erreur est survenue");
