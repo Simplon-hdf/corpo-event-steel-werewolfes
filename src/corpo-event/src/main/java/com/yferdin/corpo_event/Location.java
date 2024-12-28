@@ -18,5 +18,21 @@ public class Location {
     @Column(name = "location_name", nullable = false)
     private String locationName;
 
+	public UUID getLocationId() {
+		return locationId;
+	}
+
+	public void setLocationId(UUID locationId) {
+		this.locationId = locationId;
+	}
+
+	public String getLocationName() {
+		return locationName;
+	}
+
+	public void setLocationName(String locationName) {
+		this.locationName = locationName;
+	}
+
 }
 
