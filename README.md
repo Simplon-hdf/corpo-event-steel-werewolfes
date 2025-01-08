@@ -1,4 +1,19 @@
 # corpo-event-steel-werewolfes
+## Sommaire
+- [Contexte du projet](#contexte-du-projet)
+- [Modalités pédagogiques](#modalités-pédagogiques)
+- [Modalités d'évaluation](#modalités-dévaluation)
+- [Livrables](#livrables)
+- [Critères de performance](#critères-de-performance)
+- [Annexe : Tous les diagrammes](#annexe--tous-les-diagrammes)
+  - [Use Case](#use-case)
+  - [Classes](#classes)
+  - [Séquences](#séquences)
+  - [Activités](#activités)
+  - [Merise](#merise)
+- [Guide d'importation de la base de données](#guide-dimportation-de-la-base-de-données)
+- [Guide de démarrage rapide](#guide-de-démarrage-rapide)
+
 ## Contexte du projet
 
 Une entreprise souhaite faire partager des évènements qu'elle organise à l'ensemble de ses collaborateurs.
