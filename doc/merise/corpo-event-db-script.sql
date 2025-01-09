@@ -54,3 +54,19 @@ CREATE TABLE comments(
 );
 
 GRANT all privileges on database corpo_event to corpo_event;
+
+INSERT INTO roles (role_id, role_name) 
+VALUES 
+  (gen_random_uuid(), 'Admin'),
+  (gen_random_uuid(), 'Collaborator');
+
+DO $$
+DECLARE
+    admin_role_id UUID;
+BEGIN
+    SELECT role_id INTO admin_role_id FROM roles WHERE role_name = 'Admin';
+
+    INSERT INTO users (user_id, first_name, last_name, pass, mail, role_id)
+    VALUES 
+      (gen_random_uuid(), 'John', 'Doe', 'admin', 'admin@example.com', admin_role_id);
+END $$;
