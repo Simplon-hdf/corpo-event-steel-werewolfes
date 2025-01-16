@@ -1,7 +1,4 @@
-DROP DATABASE corpo_event;
-
 CREATE USER corpo_event WITH PASSWORD 'corpo_event';
-CREATE DATABASE corpo_event;
 
 \c corpo_event;
 
