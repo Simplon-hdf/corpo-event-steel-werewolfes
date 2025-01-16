@@ -155,8 +155,37 @@ Cette commande devrait afficher la liste de toutes les tables créées.
 - Java JDK 17 ou supérieur
 - Maven
 - PostgreSQL (voir section "Guide d'importation de la base de données")
+- Docker et Docker Compose (pour l'environnement conteneurisé)
 
-### Configuration
+### Démarrage avec Docker
+
+La façon la plus simple de démarrer l'application est d'utiliser Docker :
+
+```bash
+# Construire et démarrer les conteneurs
+docker-compose up --build -d
+
+# Voir les logs
+docker-compose logs -f
+
+# Arrêter les conteneurs
+docker-compose down
+
+# Supprimer les volumes (reset complet)
+docker-compose down -v
+```
+
+L'application sera disponible sur :
+- Frontend : http://localhost:8080
+- Base de données : localhost:5432
+  - Base de données : corpo_event
+  - Utilisateur : postgres
+  - Mot de passe : postgres
+
+### Démarrage sans Docker
+
+Si vous préférez démarrer l'application sans Docker :
+
 1. Clonez le repository :
 ```bash
 git clone https://github.com/votre-username/corpo-event-steel-werewolfes.git
@@ -167,13 +196,7 @@ cd corpo-event-steel-werewolfes
    - Suivez d'abord les étapes du "Guide d'importation de la base de données" ci-dessus
    - Vérifiez que les paramètres de connexion dans `src/corpo-event/src/main/resources/application.properties` correspondent à votre configuration PostgreSQL
 
-### Lancement de l'application
-1. Allez dans le dossier du projet Spring Boot :
-```bash
-cd src/corpo-event
-```
-
-2. Compilez et lancez l'application avec Maven :
+3. Compilez et lancez l'application avec Maven :
 ```bash
 ./mvnw spring-boot:run
 ```
@@ -182,7 +205,7 @@ Ou sur Windows :
 mvnw.cmd spring-boot:run
 ```
 
-3. Accédez à l'application :
+4. Accédez à l'application :
    - Ouvrez votre navigateur
    - Allez sur http://localhost:8080
 
